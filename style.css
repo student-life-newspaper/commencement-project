@@ -301,6 +301,10 @@ footer p{
   font-size: 32px;
 }
 
+.person-name h2{
+  font-size:
+}
+
 }
 
 @media (max-width: 768px){
@@ -313,10 +317,19 @@ footer p{
   margin: 50px 0;
 }
 
-#header-logo-vertical{
-  margin: auto;
-  display: block;
+.person-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+.headshot-container, .person-name{
+  float: none;
+}
+.person-name{
+  width: 100%;
+  padding-bottom: 20px;
+  text-align: center;
+  margin: 0;
+}
 
 }

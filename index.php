@@ -59,7 +59,7 @@
       <div class="col"></div>
       <div class="col-lg-8 message-container">
         <div class="intro-message">
-          <h1>Commencement Project</h1>
+          <h1>Class of 2020: In Their Own Words</h1>
         </div>
       </div>
       <div class="col"></div>
@@ -69,8 +69,7 @@
     <div class="stories-container container">
       <div class="row" id="row00"><div class="col"></div>
       <div class="col-md-8">
-        <h1>Commencement 2020</h1>
-        <p>Friday, May 15 would have been Commencement day for the Class of 2020. Although we can’t celebrate together on Brookings Quad, we wanted to give seniors a chance to reflect on their time at Washington University. So we asked the class of 2020: </p>
+        <p>Although we can’t celebrate together on Brookings Quad, Student Life wanted to give seniors a chance to reflect on their time at Washington University. So we asked the class of 2020:</p>
         <p>What’s one thing you learned during your time at Wash. U. that you didn’t expect to learn? </p>
         <p>Here’s what they told us:</p>
         <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/7bCC4TwIjto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
