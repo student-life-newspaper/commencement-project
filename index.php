@@ -9,12 +9,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="Although we can’t celebrate together on Brookings Quad, Student Life wanted to give seniors a chance to reflect on their time at Washington University.">
 <meta name="author" content="Student Life Staff | Student Life">
 <!-- <meta name="og:image" content="./img/47223856_10156941208138656_7315202665212805120_n.png"> -->
 <meta name="og:type" content="article">
 
-<!-- <script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -22,7 +22,7 @@
 
   ga('create', 'UA-3210731-1', 'auto');
   ga('send', 'pageview');
-</script> -->
+</script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script
   src="https://code.jquery.com/jquery-3.5.0.min.js"
@@ -108,11 +108,35 @@
           new Person("DeVaughn Rucker","DeVaughn Rucker.jpeg","https://www.youtube-nocookie.com/embed/0Eim7SnftCw","11","Florissant, Missouri","Mechanical Engineering","Men’s Basketball, National Society of Black Engineers"),
         );
 
-        foreach($people as $person):
-         ?>
-
-        <div class="row" id="<?php echo "row" . $person->number ?>"><div class="col"></div>
-          <div class="col-md-8 person-card" id="<?php echo "person-" . $person->number . "-card" ?>" data-number="<?php echo $person->number ?>">
+        $i = 0;
+        while($i < sizeof($people)){
+          $person  = $people[$i];
+          if ( !($i % 2) && $i+1==sizeof($people)){ ?>
+            <div class="row" id="<?php echo "row" . $person->number?>"><div class="col"></div>
+              <div class="col-md-5 person-card" id="<?php echo "person-" . $person->number . "-card" ?>" data-number="<?php echo $person->number ?>">
+                <div class="person-container">
+                  <div class="headshot-container">
+                    <img class="headshot" src="img/headshots/<?php echo $person->image_name ?>" alt="<?php echo $person->name ?>">
+                  </div>
+                  <div class="person-name">
+                    <h2><?php echo $person->name ?></h2>
+                  </div>
+                  <!-- <div class="selection-marker"><div class="triangle-selected"></div><div class="underline-selected"></div></div> -->
+                </div>
+                <div class="story" id="<?php echo "person-" . $person->number . "-details" ?>" data-number="<?php echo $person->number ?>">
+                  <iframe width="100%" height="315" src="<?php echo $person->video_link ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <h2><?php echo $person->name ?></h2>
+                  <p><?php echo "Hometown: " . $person->hometown ?></p>
+                  <p><?php echo "Studied: " . $person->studied ?></p>
+                  <p><?php echo "Extracurriculars: " . $person->extracurriculars ?></p>
+                </div>
+              </div>
+            <div class="col"></div></div>
+      <?php $i++;
+        }else{
+        $person2 = $people[$i+1]; ?>
+        <div class="row" id="<?php echo "row" . $person->number . " " . $person2->number?>"><div class="col"></div>
+          <div class="col-md-5 person-card" id="<?php echo "person-" . $person->number . "-card" ?>" data-number="<?php echo $person->number ?>">
             <div class="person-container">
               <div class="headshot-container">
                 <img class="headshot" src="img/headshots/<?php echo $person->image_name ?>" alt="<?php echo $person->name ?>">
@@ -120,21 +144,41 @@
               <div class="person-name">
                 <h2><?php echo $person->name ?></h2>
               </div>
+              <!-- <div class="selection-marker"><div class="triangle-selected"></div><div class="underline-selected"></div></div> -->
             </div>
-            <div class="selection-marker"><div class="triangle-selected"></div><div class="underline-selected"></div></div>
+            <div class="story" id="<?php echo "person-" . $person->number . "-details" ?>" data-number="<?php echo $person->number ?>">
+              <iframe width="100%" height="315" src="<?php echo $person->video_link ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h2><?php echo $person->name ?></h2>
+              <p><?php echo "Hometown: " . $person->hometown ?></p>
+              <p><?php echo "Studied: " . $person->studied ?></p>
+              <p><?php echo "Extracurriculars: " . $person->extracurriculars ?></p>
+            </div>
           </div>
-        <div class="col"></div></div>
-        <div class="row"><div class="col"></div>
-          <div class="col-8 story" id="<?php echo "person-" . $person->number . "-details" ?>" data-number="<?php echo $person->number ?>">
-            <iframe width="100%" height="315" src="<?php echo $person->video_link ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h3><?php echo $person->name ?></h3>
-            <p><?php echo "Hometown: " . $person->hometown ?></p>
-            <p><?php echo "Studied: " . $person->studied ?></p>
-            <p><?php echo "Extracurriculars: " . $person->extracurriculars ?></p>
+
+          <div class="col-md-5 person-card" id="<?php echo "person-" . $person2->number . "-card" ?>" data-number="<?php echo $person2->number ?>">
+            <div class="person-container">
+              <div class="headshot-container">
+                <img class="headshot" src="img/headshots/<?php echo $person2->image_name ?>" alt="<?php echo $person2->name ?>">
+              </div>
+              <div class="person-name">
+                <h2><?php echo $person2->name ?></h2>
+              </div>
+              <!-- <div class="selection-marker"><div class="triangle-selected"></div><div class="underline-selected"></div></div> -->
+            </div>
+            <div class="story" id="<?php echo "person-" . $person2->number . "-details" ?>" data-number="<?php echo $person2->number ?>">
+              <iframe width="100%" height="315" src="<?php echo $person2->video_link ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h2><?php echo $person2->name ?></h2>
+              <p><?php echo "Hometown: " . $person2->hometown ?></p>
+              <p><?php echo "Studied: " . $person2->studied ?></p>
+              <p><?php echo "Extracurriculars: " . $person2->extracurriculars ?></p>
+            </div>
           </div>
         <div class="col"></div></div>
 
-        <?php endforeach; ?>
+      <?php
+        $i+=2;
+        }
+      } ?>
 
     </div>
   </div>
